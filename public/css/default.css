@@ -230,8 +230,8 @@ a:hover {
 }
 
 .win-listview > .win-viewport.win-horizontal {
-    overflow-x: auto;
-    overflow-y: auto;
+overflow-x: hidden;
+overflow-y: hidden;
 }
 
 .win-listview .win-listlayout .win-itemsblock {
