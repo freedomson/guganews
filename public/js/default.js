@@ -56,6 +56,9 @@ function setTheme() {
     }
 
     addCSSRule(document.styleSheets[0],
+        ".progresscontainer", "background-color: " + currentcolor + " !important");
+    
+    addCSSRule(document.styleSheets[0],
         "progress", "color: " + currentcolor + " !important");
             
     addCSSRule(document.styleSheets[0],
