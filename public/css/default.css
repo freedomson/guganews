@@ -181,8 +181,8 @@ a:hover {
 {
     margin: 5px;
     margin-right:10px;
-    width:325px !important;
-    height:325px !important;
+    width:375px !important;
+    height:375px !important;
     background-size:100% auto; 
     background-repeat: no-repeat;
     background-position: center center;
@@ -260,4 +260,9 @@ a:hover {
 
 .win-listview .win-horizontal .win-listlayout .win-container {
     height: auto;
+}
+
+.win-listview .win-container, .win-listview .win-itembox, .win-itemcontainer.win-container, .win-itemcontainer .win-itembox {
+    cursor: default;
+    float: left;
 }
