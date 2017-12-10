@@ -29,18 +29,20 @@ getArticle.prototype.get = function (request, response) {
 
     if (cached) {
         console.log("Art from cache!", hash/*, JSON.parse(cached)*/);
-        if (Config.cachefile) {
-            fs.writeFile(Config.cachefilename, cache.exportJson(), Config.cachecoding, function (err,data) {
-                if (err) {
-                  return console.log('error',err);
-                }
-                console.log('Cache written', Config.cachefilename);
-              });
+        var err = JSON.stringify(cached).indexOf("404 - File or directory not found.")==-1 ? false : true;
+        if (!err) {
+            console.log('cached',hash);
+            response.end(cached);
+            return;
+        } else {
+            console.log('DELETE',hash);
+            cache.clear(); // CACHE ERROR FORCE CLEAN
+            response.end(JSON.stringify({success:false}));
+            return;
         }
-        response.end(cached);
-        return;
     }
 
+    console.log('fetching',hash);
     let topics = request.get.keywords.split(',')
 
     // var keywords = request.get.keywords ? ',{"keyword": {"$and": ["'+request.get.keywords+'"]}}' : ""
@@ -77,7 +79,7 @@ getArticle.prototype.get = function (request, response) {
 
 getArticle.prototype.articleprocessor = function(hashin, keywords, location, name, to, response){
 
-    console.log("keywords", keywords);
+    // console.log("keywords", keywords);
 
     // var keywords = (keywords)  ? ',{"keyword": {"$or": ["'+keywords.join('","')+'"]}}' : ""
     var keywords = keywords ? keywords : [name]
@@ -103,10 +105,19 @@ getArticle.prototype.articleprocessor = function(hashin, keywords, location, nam
         }
     };
     // https://newsapi.org/v2/everything?sortBy=publishedAt&from=2017-12-02language=pt&q=portugal%20tecnologia&apiKey=
-    console.log("Setup", setup);
+    // console.log("Setup", setup);
     var out = requestOut.get(setup,
         function (error, responsein, body) {
             cache.put(hashin, body, Config.cachetimeout);
+            if (Config.cachefile) {
+                fs.writeFile(Config.cachefilename, cache.exportJson(), Config.cachecoding, function (err,data) {
+                    if (err) {
+                      return console.log('error',err);
+                    }
+                    // console.log(cached);
+                    console.log('Cache written', Config.cachefilename);
+                  });
+            }
             response.end(body);
         });
 }
@@ -121,7 +132,7 @@ getArticle.prototype.translateprocessor = function(hashin, topics, value, locati
 
     if (cached) {
         cache.put(hash, ++cached);
-        console.log("caching",cached,value.text);
+        //console.log("caching",cached,value.text);
         try {
             cache.put(hashdata, cacheddata.concat(value.text[0]));
         } catch(e){
@@ -143,7 +154,7 @@ getArticle.prototype.translateprocessor = function(hashin, topics, value, locati
     // console.log('topics',cacheddata.length,topics)
     //if (cacheddata.length===topics.length){
         cacheddata = cache.get(hashdata);
-        console.log('All is translated!', topics, cacheddata);
+        // console.log('All is translated!', topics, cacheddata);
         getArticle.prototype.articleprocessor(hashin, cacheddata, location, name, to, response)
     //}
 }
@@ -152,7 +163,7 @@ getArticle.prototype.translate = function (hashin, topic, topics, from, to, loca
     var hash=topic+from+to
     var cached=cache.get(hash);
     if (cached) {
-        console.log("Translate from cache!", cached);
+        // console.log("Translate from cache!", cached);
         getArticle.prototype.translateprocessor(hashin, topics, cached, location, name, to, response)
         return cached;
     }
@@ -164,7 +175,7 @@ getArticle.prototype.translate = function (hashin, topic, topics, from, to, loca
             "lang": from+"-"+to
         }
     }
-    console.log('transreq',transreq);
+    // console.log('transreq',transreq);
     var out = requestOut.get(transreq, 
         function (error, responsein, body) {
             try {

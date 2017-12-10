@@ -25,6 +25,7 @@ var resources = {
     ],
 "Europe":
     [
+        {"gps":"25°45'S 28°11'E","url":"https://en.wikipedia.org/wiki/Angola","name":"Angola","lang":"pt"},
         {"gps":"51°13'N 4°24'E","url":"http://en.wikipedia.org/wiki/Belgium","name":"Belgium","lang":"fr"},
         {"gps":"24°39'S 25°55'E","url":"http://en.wikipedia.org/wiki/Botswana","name":"Botswana","lang":"fr"},
         {"gps":"50°05'N 14°25'E","url":"https://en.wikipedia.org/wiki/Czech_Republic","name":"Česká republika"},
@@ -36,7 +37,8 @@ var resources = {
         {"gps":"53°21'N 6°16'W","url":"https://en.wikipedia.org/wiki/Ireland","name":"Ireland","lang":"en"},
         {"gps":"41°54'N 12°30'E","url":"https://en.wikipedia.org/wiki/Italy","name":"Italia","lang":"it"},
         {"gps":"1°17'S 36°49'E","url":"https://en.wikipedia.org/wiki/Kenya","name":"Kenya","lang":"en"},
-        {"gps":"47°28'N 19°03'E","url":"https://en.wikipedia.org/wiki/Hungary","name":"Magyarország"},    
+        {"gps":"47°28'N 19°03'E","url":"https://en.wikipedia.org/wiki/Hungary","name":"Magyarország"},
+        {"gps":"25°45'S 28°11'E","url":"https://en.wikipedia.org/wiki/Mozambique","name":"Moçambique","lang":"pt"},
         {"gps":"34°02'N 6°50'W","url":"http://news.google.com/news?ned=fr_ma","name":"Moroc"},
         {"gps":"22°34'S 17°05'E","url":"http://news.google.com/news?ned=en_na","name":"Namibia"},
         {"gps":"52°05'N 4°19'E","url":"http://news.google.com/news?ned=nl_nl","name":"Nederland"},

@@ -183,6 +183,9 @@ function getNews(invoke, uselast, cb) {
                                     console.log("Finished loading news");
                                     if (cb) cb();
                                 });
+                    }).catch(function (err) {
+                        console.log('Fetch Error :-:', err);
+                       
                     });
                 }
             )
