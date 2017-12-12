@@ -61601,7 +61601,7 @@ define('WinJS/Controls/Pivot',[
                     }
 
                     // This prevents Chrome's history navigation swipe gestures.
-                    e.preventDefault();
+                    // e.preventDefault();
 
                     this._elementPointerDownPoint = { x: e.clientX, y: e.clientY, type: e.pointerType || "mouse", time: Date.now(), inHeaders: this._headersContainerElement.contains(e.target) };
                 },
