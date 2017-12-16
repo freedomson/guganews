@@ -75,7 +75,7 @@ html.win-hoverable .win-pivot button.win-pivot-header:hover
 /*LIST*/
 .win-listview > .win-vertical .win-container {
     margin: 0px;
-    min-height: 30px;
+    height: 100%;
     width: 100%;
 }
 /*ITEM*/

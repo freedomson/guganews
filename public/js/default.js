@@ -51,7 +51,7 @@ function setTheme() {
         hlcolorrgb = window.getComputedStyle(hlcolor).color;
         currentcolor = hlcolorrgb;
     } else {
-        let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet']
+        let colors = ['orangered', 'salmon', 'tomato', 'green', 'ligthskyblue', 'violet']
         currentcolor = colors[(Math.floor((Math.random() * 6)))];
     }
 
