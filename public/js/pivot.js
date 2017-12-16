@@ -77,7 +77,7 @@ WinJS.UI.processAll().then(function () {
                                             clicked,
                                             function () {
                                                 spinner.stop();
-                                                console.log("spinner out");
+                                                //console.log("spinner out");
                                                 list.ensureVisible(index);
                                             });
                                     }, false);
@@ -148,14 +148,14 @@ function getNews(invoke, uselast, cb) {
 
         var topiclist= setup['list'][(area)]
         
-        console.log("RC",requestCounter)
+        // console.log("RC",requestCounter)
 
         var cmd = eval("`" + setup.endpoint + "`")
-        console.log(cmd)
+        // console.log(cmd)
         fetch(cmd)
             .then(
                 function (response) {
-                    console.log("Response:", response);
+                    // console.log("Response:", response);
 
                     switch (response.status) {
                         case 200:
@@ -167,7 +167,7 @@ function getNews(invoke, uselast, cb) {
 
                     // Examine the text in the response
                     response.json().then(function (data) {
-                        console.log("ResponseJSON:", topiclist, location, data);
+                        // console.log("ResponseJSON:", topiclist, location, data);
                         switch (data.status) {
                             case 202:
                                 updateBar();
@@ -175,12 +175,13 @@ function getNews(invoke, uselast, cb) {
                                 console.log('Looks like there was a problem. Status Code: ' + data.status);
                                 break;
                         }
-                        console.log("RCC",--requestCounter)
+                        --requestCounter
+                       // console.log("RCC",requestCounter)
                         processResults(area, data)
                         if (requestCounter === 0)
                             WinJS.Navigation.navigate("/list.html", name).done(
                                 function () {
-                                    console.log("Finished loading news");
+                                    // console.log("Finished loading news");
                                     if (cb) cb();
                                 });
                     }).catch(function (err) {
@@ -210,11 +211,11 @@ function transitionBetweenContent(clicked, cb) {
         transitionBetweenContentToggle(clicked.id, clicked.id2, clicked.id3, clicked.id4, cb);
 
     } else {
-        console.log('transitionBetweenContent_2',clicked.id, clicked.id2, clicked.id3, clicked.id4, cb);
+        // console.log('transitionBetweenContent_2',clicked.id, clicked.id2, clicked.id3, clicked.id4, cb);
         currentCountryData.content[clicked.id] = true;
         loadImageForItem(clicked, clicked.id3);
         //loadVideoForItem(clicked, clicked.id4);
-        console.log('transitionBetweenContent_2',clicked.id2);
+        // console.log('transitionBetweenContent_2',clicked.id2);
 
         WinJS.Utilities.query('[name="' + clicked.id2 + '"] a').forEach(function (itema) {
             itema.addEventListener("click",
@@ -228,14 +229,14 @@ function transitionBetweenContent(clicked, cb) {
                 });
         });
 
-        console.log('bindMediaImage request');
+        // console.log('bindMediaImage request');
         bindMediaImage(clicked.id2, clicked.id3, clicked.id4,
             function () {
-                console.log('bindMediaImage');
+                // console.log('bindMediaImage');
                 transitionBetweenContentToggle(clicked.id, clicked.id2, clicked.id3, clicked.id4, cb);
 
             });
-         console.log('bindMediaImage request done');
+         // console.log('bindMediaImage request done');
 
     }
 
