@@ -14,9 +14,8 @@ var resources = {
         {"gps":"24°28'N 54°22'E","url":"http://news.google.com/news?ned=ar_ae","name":"UAE","lang":"ar"},
         {"gps":"33°53'N 35°31'E","url":"http://news.google.com/news?ned=ar_lb","name":"Lebanon"},
         {"gps":"24°38'N 46°43'E","url":"http://news.google.com/news?ned=ar_sa","name":"KSA"},
-        {"gps":"39°54'N 116°24'E","url":"http://news.google.com/news?ned=cn","name":"China","lang":"cn"},
+        {"gps":"39°54'N 116°24'E","url":"https://en.wikipedia.org/wiki/China","name":"China","lang":"en"},
         {"gps":"22°17'N 114°10'E","url":"http://news.google.com/news?ned=hk","name":"Hong Kong","lang":"en"},
-        {"gps":"35°18'S 149°07'E","url":"http://news.google.com/news?ned=hi_in","name":"India","lang":"in"},
         {"gps":"32°04'N 34°47'E","url":"http://news.google.com/news?ned=iw_il","name":"Israel"},
         {"gps":"35°41'N 139°42'E","url":"http://news.google.com/news?ned=jp","name":"Japan"},
         {"gps":"35°11'N 129°05'E","url":"http://news.google.com/news?ned=kr","name":"Korea"},
@@ -25,7 +24,7 @@ var resources = {
     ],
 "Europe":
     [
-        {"gps":"25°45'S 28°11'E","url":"https://en.wikipedia.org/wiki/Angola","name":"Angola","lang":"pt"},
+        {"gps":"8°50'S 13°17'E","url":"https://en.wikipedia.org/wiki/Angola","name":"Angola","lang":"pt"},
         {"gps":"51°13'N 4°24'E","url":"http://en.wikipedia.org/wiki/Belgium","name":"Belgium","lang":"fr"},
         {"gps":"24°39'S 25°55'E","url":"http://en.wikipedia.org/wiki/Botswana","name":"Botswana","lang":"fr"},
         {"gps":"50°05'N 14°25'E","url":"https://en.wikipedia.org/wiki/Czech_Republic","name":"Česká republika"},
@@ -38,7 +37,7 @@ var resources = {
         {"gps":"41°54'N 12°30'E","url":"https://en.wikipedia.org/wiki/Italy","name":"Italia","lang":"it"},
         {"gps":"1°17'S 36°49'E","url":"https://en.wikipedia.org/wiki/Kenya","name":"Kenya","lang":"en"},
         {"gps":"47°28'N 19°03'E","url":"https://en.wikipedia.org/wiki/Hungary","name":"Magyarország"},
-        {"gps":"25°45'S 28°11'E","url":"https://en.wikipedia.org/wiki/Mozambique","name":"Moçambique","lang":"pt"},
+        {"gps":"25°53'S 32°36'E","url":"https://en.wikipedia.org/wiki/Mozambique","name":"Moçambique","lang":"pt"},
         {"gps":"34°02'N 6°50'W","url":"http://news.google.com/news?ned=fr_ma","name":"Moroc"},
         {"gps":"22°34'S 17°05'E","url":"http://news.google.com/news?ned=en_na","name":"Namibia"},
         {"gps":"52°05'N 4°19'E","url":"http://news.google.com/news?ned=nl_nl","name":"Nederland"},
