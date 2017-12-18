@@ -65,7 +65,7 @@ var resources = {
 "North":
     [
         {"gps":"34°36'S 58°23'W","url":"http://news.google.com/news?ned=es_ar","name":"Argentina","lang":"es"},
-        {"gps":"22°55'S 43°12'W","url":"http://news.google.com/news?ned=pt-BR_br","name":"Brasil","lang":"br"},
+        {"gps":"22°55'S 43°12'W","url":"http://news.google.com/news?ned=pt-BR_br","name":"Brasil","lang":"pt"},
         {"gps":"43°42'N 79°24'W","url":"http://news.google.com/news?ned=ca","name":"Canada English","lang":"en"},
         {"gps":"46°49'N 71°13'W","url":"http://news.google.com/news?ned=fr_ca","name":"Canada Français","lang":"fr"},
         {"gps":"33°27'S 70°40'W","url":"http://news.google.com/news?ned=es_cl","name":"Chile","lang":"es"},
