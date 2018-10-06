@@ -1,129 +1,98 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <title>Guganews</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-   <!-- Trianglify: -->
-	
-	<script src="http://d3js.org/d3.v3.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.5/trianglify.min.js"></script>
+    <!-- Trianglify: -->
+
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/trianglify/0.1.5/trianglify.min.js"></script>
     <!-- WinJS references -->
 
     <link href="/vendor/winjs/css/ui-dark.css" rel="stylesheet" />
     <script src="/vendor/winjs/js/WinJS.js"></script>
 
     <!-- CSS: UrzaGatherer references -->
-    <link href="/css/default.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet"> 
     <link href="/css/pivot.css" rel="stylesheet">
 
     <!-- JS: UrzaGatherer references -->
     <script src="/js/default.js"></script>
-     <script src="/json-data/feeds.js"></script>
+    <script src="/json-data/feeds.js"></script>
     <script src="/js/pivot.js"></script>
     <script src="/js/geolocation.js"></script>
     <script src="/js/images.js"></script>
 
 
 </head>
+
 <body id="contentTarget">
 
     <label id="progresscontainer">
         <progress id="myProgressRing" class="win-ring win-large"></progress>
     </label>
 
-	<div class="box">
-	    <div data-win-control="WinJS.UI.ContentDialog" data-win-options="{
+    <div class="box">
+        <div data-win-control="WinJS.UI.ContentDialog" data-win-options="{
 	             title: 'Network failure',
 	             primaryCommandText: 'Ok'
 	        }">
-	        Please check your internet connection and try again.
-	        <div style="height: 50px; width: 1px;"></div>
-	    </div>
-	</div>
-	<div class="box">
-	    <div id="refresh" data-win-control="WinJS.UI.ContentDialog" data-win-options="{
+            Please check your internet connection and try again.
+            <div style="height: 50px; width: 1px;"></div>
+        </div>
+    </div>
+    <div class="box">
+        <div id="refresh" data-win-control="WinJS.UI.ContentDialog" data-win-options="{
 	             title: 'Dear user,',
 	             secondaryCommandText: 'I am reading. Please wait...'
 	        }">
-	        <h1>I am about to update!</h1>
-	        <div style="height: 50px; width: 1px;"></div>
-	    </div>
-	</div>
+            <h1>I am about to update!</h1>
+            <div style="height: 50px; width: 1px;"></div>
+        </div>
+    </div>
 
-	<div id="progress"></div>
+    <div id="progress"></div>
 
-	<div class="fullScreen">
+    <div class="fullScreen">
 
-	    <!-- app header and backbutton-->
-	    <div id="appHeader">
-	        <button data-win-control="WinJS.UI.BackButton"></button>
-	        <h1  id="appHeaderTitle"><b>Guganews</b></h1>
-	    </div>
+        <!-- app header and backbutton-->
+        <div id="appHeader">
+            <button data-win-control="WinJS.UI.BackButton"></button>
+            <h1 id="appHeaderTitle">
+                <b>Guganews</b>
+            </h1>
+        </div>
 
-	    <!-- Template for ListView in section 2 -->
-	    <!--
-	    <div class="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template">
-	        <div class="smallListIconTextItem">	
-	            <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
-	            <div class="smallListIconTextItem-Detail">
-	                <h4 data-win-bind="textContent: title"></h4>
-	                <h6 data-win-bind="textContent: text"></h6>
-	            </div>
-	        </div>
-	    </div>
-	    -->
+        <!-- Start PIVOT... -->
+        <div class="mailItemTemplate" data-win-control="WinJS.Binding.Template">
+            <div class="mailItem mailItemIndex">
+                <div class="hitTarget win-interactive"></div>
+                <h2 class="title title-index fontcolorselect" data-win-bind="innerHTML: name"></h2>
+            </div>
+        </div>
 
 
+        <div id="pivotScenario3" class="wide" data-win-control="WinJS.UI.Pivot" data-win-options="{ title: '', selectedIndex: 1 }">
 
+            <div class="listviewpivotitem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'Asia', managedLV: true }">
+                <div data-win-control="WinJS.UI.ListView" data-win-options="{ itemDataSource: Asia.dataSource, layout: { type: WinJS.UI.ListLayout }, itemTemplate: select('.mailItemTemplate'), selectionMode: 'none' }"></div>
+            </div>
 
+            <div class="listviewpivotitem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'Europe &amp; Africa', managedLV: true }">
+                <div data-win-control="WinJS.UI.ListView" data-win-options="{ itemDataSource: Europe.dataSource, layout: { type: WinJS.UI.ListLayout }, itemTemplate: select('.mailItemTemplate'), selectionMode: 'none' }"></div>
+            </div>
 
-				<!-- Start PIVOT... -->
-				<div class="mailItemTemplate" data-win-control="WinJS.Binding.Template">
-				    <div class="mailItem mailItemIndex">
-				        <div class="hitTarget win-interactive"></div>
-				        <h2 class="title title-index fontcolorselect" data-win-bind="innerHTML: name"></h2>
-				    </div>
-				</div>
+            <div class="listviewpivotitem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'North &amp; South America',appBarClosedDisplayMode: 'minimal', managedLV: true }">
+                <div data-win-control="WinJS.UI.ListView" data-win-options="{ itemDataSource: North.dataSource, layout: { type: WinJS.UI.ListLayout }, itemTemplate: select('.mailItemTemplate'), selectionMode: 'none' }"></div>
+            </div>
 
+        </div>
 
-				<div id="pivotScenario3" class="wide" data-win-control="WinJS.UI.Pivot" data-win-options="{ title: '', selectedIndex: 1 }">
+    </div>
 
-				    <div class="listviewpivotitem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'Asia', managedLV: true }">
-				        <div data-win-control="WinJS.UI.ListView" data-win-options="{ itemDataSource: Asia.dataSource, layout: { type: WinJS.UI.ListLayout }, itemTemplate: select('.mailItemTemplate'), selectionMode: 'none' }"></div>
-				    </div>
-
-				    <div class="listviewpivotitem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'Europe &amp; Africa', managedLV: true }">
-				        <div data-win-control="WinJS.UI.ListView" data-win-options="{ itemDataSource: Europe.dataSource, layout: { type: WinJS.UI.ListLayout }, itemTemplate: select('.mailItemTemplate'), selectionMode: 'none' }"></div>
-				    </div>
-
-				    <div class="listviewpivotitem" data-win-control="WinJS.UI.PivotItem" data-win-options="{ 'header': 'North &amp; South America',appBarClosedDisplayMode: 'minimal', managedLV: true }">
-				        <div data-win-control="WinJS.UI.ListView" data-win-options="{ itemDataSource: North.dataSource, layout: { type: WinJS.UI.ListLayout }, itemTemplate: select('.mailItemTemplate'), selectionMode: 'none' }"></div>
-				    </div>
-
-				    </div>
-
-	        <!-- 
-	        <div id="list" class="section2" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'ListView', isHeaderStatic: true}">
-	            <div id="listView"
-	                 class="win-selectionstylefilled"
-	                 data-win-control="WinJS.UI.ListView"
-	                 data-win-options="{
-	                    itemDataSource: select('.pagecontrol').winControl.myData.dataSource,
-	                    itemTemplate: select('.smallListIconTextTemplate'),
-	                    selectionMode: 'none',
-	                    layout: { type: WinJS.UI.ListLayout},
-	                    tapBehavior: 'none',
-	                    swipeBehavior: 'none'
-	                }">
-	            </div>
-	            			-->
-
-	        </div>
-
-
-<div class="powered">Powered by <a href="http://news.google.com">news.google.com</a>
 </body>
-</html>
 
+</html>

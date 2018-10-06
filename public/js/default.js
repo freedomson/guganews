@@ -103,7 +103,7 @@ function processResults(topic, result) {
 
     var id = 0;
     var i = 0;
-    var max = 50;
+    var max = 100;
     // var preimg=[];
     var sets=[];
     var _pods=[];
@@ -115,8 +115,26 @@ function processResults(topic, result) {
         return;
     }
     // console.log(result.events.results);
-    data = result.articles.map(
-        function (item) {
+    // Remove duplicates
+    dups=[];
+    data = result.articles.filter(
+        (item, index, self) => {
+        // console.log(index,item.title);
+        indexd = self.findIndex((t,innerindex,array) => (
+          t.title === item.title && innerindex != index
+        ))
+       // console.log('detected',indexd,index)
+       if (indexd!=-1 && dups.indexOf(item.title)==-1) dups[index]=item.title;
+       return (indexd==-1)
+      } 
+    )
+
+    Object.keys(dups).forEach((key)=>{
+        if(key)data.push(result.articles[key]);
+    });
+
+    data = data.map(
+        function (item, index, array) {
             i++
             // console.log(item)
             item.id = topic + "_" + (++id);
@@ -146,10 +164,10 @@ function processResults(topic, result) {
                 img             : (item.urlToImage ? item.urlToImage : "images/windows/Square71x71Logo.scale-100.png"),
                 year            : publishedDate.getFullYear(),
                 month           : (publishedDate.getMonth() + 1),
-                day             : publishedDate.getDate(),
-                monthyear       : ((publishedDate.getMonth() + 1) + "/" +  publishedDate.getFullYear())
+                date            : (publishedDate.getDate() + "/" + (publishedDate.getMonth() + 1) + "/" +  publishedDate.getFullYear()),
+                time            : ((publishedDate.getHours()) + ":" +  String(publishedDate.getMinutes()).padStart(2, "0"))
             };
-           
+
             _pods.push(out)
             if (i%max==0)
             {
@@ -162,7 +180,7 @@ function processResults(topic, result) {
             return out;
         }
     );
-    // console.log("data_" + topic, "datasource",data);
+ 
     if (_pods.length>0&&sets.length==0) sets[max]=_pods
     if (_pods.length>0&&sets.length!=0) {
 

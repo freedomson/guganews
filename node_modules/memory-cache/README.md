@@ -1,50 +1,72 @@
-# node-cache
+# memory-cache [![Build Status](https://travis-ci.org/ptarjan/node-cache.svg?branch=master)](https://travis-ci.org/ptarjan/node-cache)
 
 A simple in-memory cache for node.js
 
 ## Installation
 
-    npm install memory-cache
+    npm install memory-cache --save
 
 ## Usage
 
-    var cache = require('memory-cache');
+```javascript
+var cache = require('memory-cache');
 
-    // now just use the cache
+// now just use the cache
 
-    cache.put('foo', 'bar');
-    console.log(cache.get('foo'))
+cache.put('foo', 'bar');
+console.log(cache.get('foo'));
 
-    // that wasn't too interesting, here's the good part
+// that wasn't too interesting, here's the good part
 
-    cache.put('houdini', 'disapear', 100) // Time in ms
-    console.log('Houdini will now ' + cache.get('houdini'));
+cache.put('houdini', 'disappear', 100, function(key, value) {
+    console.log(key + ' did ' + value);
+}); // Time in ms
 
-    setTimeout(function() {
-      console.log('Houdini is ' + cache.get('houdini'));
-    }, 200);
+console.log('Houdini will now ' + cache.get('houdini'));
+
+setTimeout(function() {
+    console.log('Houdini is ' + cache.get('houdini'));
+}, 200);
+
+
+// create new cache instance
+var newCache = new cache.Cache();
+
+newCache.put('foo', 'newbaz');
+
+setTimeout(function() {
+  console.log('foo in old cache is ' + cache.get('foo'));
+  console.log('foo in new cache is ' + newCache.get('foo'));
+}, 200);
+```
 
 which should print
 
     bar
-    Houdini will now disapear
+    Houdini will now disappear
+    houdini did disappear
     Houdini is null
+    foo in old cache is baz
+    foo in new cache is newbaz
 
 ## API
 
-### put = function(key, value, time)
+### put = function(key, value, time, timeoutCallback)
 
-* Simply stores a value. 
-* If time isn't passed in, it is stored forever.
-* Will actually remove the value in the specified time (via `setTimeout`)
+* Simply stores a value
+* If time isn't passed in, it is stored forever
+* Will actually remove the value in the specified time in ms (via `setTimeout`)
+* timeoutCallback is optional function fired after entry has expired with key and value passed (`function(key, value) {}`)
+* Returns the cached value
 
 ### get = function(key)
 
-* Retreives a value for a given key
+* Retrieves a value for a given key
+* If value isn't cached, returns `null`
 
 ### del = function(key)
 
-* Deletes a key
+* Deletes a key, returns a boolean specifying whether or not the key was deleted
 
 ### clear = function()
 
@@ -65,19 +87,39 @@ which should print
 
 ### hits = function()
 
-* Returns the number of cache hits
+* Returns the number of cache hits (only monitored in debug mode)
 
 ### misses = function()
 
-* Returns the number of cache misses.
+* Returns the number of cache misses (only monitored in debug mode)
 
-## TODO
+### keys = function()
 
-* Namespaces
-* A way of walking the cache for diagnostic purposes
+* Returns all the cache keys
+
+### exportJson = function()
+
+* Returns a JSON string representing all the cache data
+* Any timeoutCallbacks will be ignored
+
+### importJson = function(json: string, options: { skipDuplicates: boolean })
+
+* Merges all the data from a previous call to `export` into the cache
+* Any existing entries before an `import` will remain in the cache
+* Any duplicate keys will be overwritten, unless `skipDuplicates` is `true`
+* Any entries that would have expired since being exported will expire upon being imported (but their callbacks will not be invoked)
+* Available `options`:
+  * `skipDuplicates`: If `true`, any duplicate keys will be ignored when importing them. Defaults to `false`.
+* Returns the new size of the cache
+
+### Cache = function()
+
+* Cache constructor
+* note that `require('cache')` would return the default instance of Cache
+* while `require('cache').Cache` is the actual class
 
 ## Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Send me a pull request.

@@ -77,7 +77,6 @@ WinJS.UI.processAll().then(function () {
                                             clicked,
                                             function () {
                                                 spinner.stop();
-                                                //console.log("spinner out");
                                                 list.ensureVisible(index);
                                             });
                                     }, false);
@@ -95,7 +94,6 @@ WinJS.UI.processAll().then(function () {
         );
 });
 
-
 function getNews(invoke, uselast, cb) {
 
     var spinner = spin();
@@ -104,42 +102,26 @@ function getNews(invoke, uselast, cb) {
     var name = uselast ? currentCountryData.data.name : invoke.detail.itemPromise._value.data.name;
     var to = uselast ? currentCountryData.data.lang : invoke.detail.itemPromise._value.data.lang;
 
-    
-    /*
-    h - specifies the top headlines topic
-    w - specifies the world topic
-    b - specifies the business topic
-    n - specifies the nation topic
-    t - specifies the science and technology topic
-    el - specifies the elections topic
-    p - specifies the politics topic
-    e - specifies the entertainment topic
-    s - specifies the sports topic
-    m - specifies the health topic
-    */
-
     var setup = { 
-        list : { "h":"" // Blank special key search all
-                ,"w": ['world news','international politics','global politics','world crises']
-                ,"b": ['business','company', 'companies','money','stocks', 'shares', 'sell', 'buy']
-                ,"n": ['national','vilage','city','country']
-                ,"t": ['technology','mobile','tech','artificial inteligence','robot','computer software','computer hardware', 'computer games']
+        list : { "h":  "" // Blank special key search all
+                ,"w":  ['world news','international politics','global politics','world crises']
+                ,"b":  ['business','company', 'companies','money','stocks', 'shares', 'sell', 'buy']
+                ,"n":  ['national','vilage','city','country']
+                ,"t":  ['technology','mobile','tech','artificial inteligence','robot','computer software','computer hardware', 'computer games']
                 ,"el": ['election','campaign','candidate','vote']
-                ,"p": ['politic','internation affair','parlament','law','legislation', 'court']
-                ,"e": ['entertainment','movie','music','paint', 'art']
-                ,"s": ['sports','tennis','soccer','hockey','estadium','qualify','qualifiers', 'race', 'game']
-                ,"m": ['health','vacine','doctor','nurse','medicine','hospital','healthcare']},
+                ,"p":  ['politic','internation affair','parlament','law','legislation', 'court']
+                ,"e":  ['entertainment','movie','music','paint', 'art']
+                ,"s":  ['sports','tennis','soccer','hockey','estadium','qualify','qualifiers', 'race', 'game', 'world cup', 'martial arts']
+                ,"m":  ['health','vacine','doctor','nurse','medicine','hospital','healthcare']},
         from: 'en',
         to: to || 'en',
-        business: ['business','companies','money','stocks'],
-        sports: ['sports','tennis','hockey','futebol', 'basket'],
         endpoint:"/getarticle?keywords=${topiclist}&location=${location}&from=${setup.from}&to=${setup.to}&name=${name}"
     };
 
     currentCountryData = invoke ? invoke.detail.itemPromise._value : currentCountryData;
     currentCountryData.data.ned=to;
     currentCountryData.data.hl=location;
-    // Content cache clear
+
     currentCountryData.content={};
 
     var thekeys= Object.keys(setup['list']);

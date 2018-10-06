@@ -16,8 +16,8 @@ The main components are:
 
 ### Install & run
 ```
-export TRANS_KEY=trnsl.1.XXX // Get a key for the translate api here translate.yandex.net.
-export NAPI= XXX // Get a key at translate.yandex.net.
+export TRANS_KEY=trnsl.1.XXX // Get a key for the translate api here https://tech.yandex.com/translate/
+export NAPI= XXX // Get a key at https://newsapi.org/login
 node server.js
 
 http://localhost:8080

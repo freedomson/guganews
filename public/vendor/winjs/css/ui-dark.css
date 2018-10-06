@@ -384,381 +384,40 @@
   }
 }
 @font-face {
-  font-family: "Segoe UI Command";
-  src: local("Segoe UI Symbol");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: "Symbols";
   src: url(../fonts/Symbols.ttf);
 }
 .win-type-xx-large {
-  font-size: 46px;
   font-weight: 200;
   line-height: 1.216;
   letter-spacing: 0px;
 }
 .win-type-x-large {
-  font-size: 34;
   font-weight: 200;
   line-height: 1.176;
 }
 .win-type-large {
-  font-size: 24px;
   font-weight: 300;
   line-height: 1.167;
 }
 .win-type-medium {
-  font-size: 20px;
   font-weight: 400;
   line-height: 1.2;
 }
 .win-type-small {
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
 .win-type-x-small {
-  font-size: 15px;
   font-weight: 500;
   line-height: 1.333;
 }
 .win-type-xx-small {
-  font-size: 12px;
   font-weight: 400;
   line-height: 1.167;
 }
-@font-face {
-  font-family: "Segoe UI";
-  font-weight: 200;
-  src: local("Segoe UI Light");
-}
-@font-face {
-  font-family: "Segoe UI";
-  font-weight: 300;
-  src: local("Segoe UI Semilight");
-}
-@font-face {
-  font-family: "Segoe UI";
-  font-weight: 400;
-  src: local("Segoe UI");
-}
-@font-face {
-  font-family: "Segoe UI";
-  font-weight: 500;
-  src: local("Segoe UI Semibold");
-}
-@font-face {
-  font-family: "Segoe UI";
-  font-weight: 600;
-  src: local("Segoe UI Bold");
-}
-@font-face {
-  font-family: "Segoe UI";
-  font-style: italic;
-  font-weight: 400;
-  src: local("Segoe UI Italic");
-}
-@font-face {
-  font-family: "Segoe UI";
-  font-style: italic;
-  font-weight: 700;
-  src: local("Segoe UI Bold Italic");
-}
-@font-face {
-  font-family: "Segoe WP";
-  font-weight: 300;
-  src: local("Segoe WP Light");
-}
-@font-face {
-  font-family: "Segoe WP";
-  font-weight: 600;
-  src: local("Segoe WP Semilight");
-}
-@font-face {
-  font-family: "Segoe WP";
-  font-weight: 500;
-  src: local("Segoe WP");
-}
-@font-face {
-  font-family: "Segoe WP";
-  font-weight: 400;
-  src: local("Segoe WP");
-}
-@font-face {
-  font-family: "Segoe WP";
-  font-weight: 700;
-  src: local("Segoe WP Bold");
-}
-@font-face {
-  font-family: "Segoe WP";
-  font-style: italic;
-  font-weight: 500;
-  src: local("Segoe WP Italic");
-}
-@font-face {
-  font-family: "Segoe WP";
-  font-style: italic;
-  font-weight: 700;
-  src: local("Segoe WP Bold Italic");
-}
-@font-face {
-  font-family: "Microsoft Yahei UI";
-  font-weight: 200;
-  src: local("Microsoft Yahei UI Light");
-}
-@font-face {
-  font-family: "Microsoft Yahei UI";
-  font-weight: 300;
-  src: local("Microsoft Yahei UI");
-}
-@font-face {
-  font-family: "Microsoft Yahei UI";
-  font-weight: 500;
-  src: local("Microsoft Yahei UI");
-}
-@font-face {
-  font-family: "Microsoft Yahei UI";
-  font-weight: 600;
-  src: local("Microsoft Yahei UI Bold");
-}
-@font-face {
-  font-family: "Microsoft JhengHei UI";
-  font-weight: 200;
-  src: local("Microsoft JhengHei UI Light");
-}
-@font-face {
-  font-family: "Microsoft JhengHei UI";
-  font-weight: 300;
-  src: local("Microsoft JhengHei UI");
-}
-@font-face {
-  font-family: "Microsoft JhengHei UI";
-  font-weight: 500;
-  src: local("Microsoft JhengHei UI");
-}
-@font-face {
-  font-family: "Microsoft JhengHei UI";
-  font-weight: 600;
-  src: local("Microsoft JhengHei UI Bold");
-}
-body:-ms-lang(am, ti),
-.win-type-xx-large:-ms-lang(am, ti),
-.win-type-x-large:-ms-lang(am, ti),
-.win-type-large:-ms-lang(am, ti),
-.win-type-medium:-ms-lang(am, ti),
-.win-type-small:-ms-lang(am, ti),
-.win-type-x-small:-ms-lang(am, ti),
-.win-type-xx-small:-ms-lang(am, ti),
-input:-ms-lang(am, ti),
-textarea:-ms-lang(am, ti),
-.win-textarea:-ms-lang(am, ti),
-button:-ms-lang(am, ti),
-select:-ms-lang(am, ti),
-option:-ms-lang(am, ti) {
-  font-family: "Ebrima", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-.win-type-xx-large:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-.win-type-x-large:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-.win-type-large:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-.win-type-medium:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-.win-type-small:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-.win-type-x-small:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-.win-type-xx-small:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-input:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-textarea:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-.win-textarea:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-button:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-select:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te),
-option:-ms-lang(as, bn, gu, hi, kn, kok, ml, mr, ne, or, pa, sat-Olck, si, srb-Sora, ta, te) {
-  font-family: "Nirmala UI", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(chr-CHER-US),
-.win-type-xx-large:-ms-lang(chr-CHER-US),
-.win-type-x-large:-ms-lang(chr-CHER-US),
-.win-type-large:-ms-lang(chr-CHER-US),
-.win-type-medium:-ms-lang(chr-CHER-US),
-.win-type-small:-ms-lang(chr-CHER-US),
-.win-type-x-small:-ms-lang(chr-CHER-US),
-.win-type-xx-small:-ms-lang(chr-CHER-US),
-input:-ms-lang(chr-CHER-US),
-textarea:-ms-lang(chr-CHER-US),
-.win-textarea:-ms-lang(chr-CHER-US),
-button:-ms-lang(chr-CHER-US),
-select:-ms-lang(chr-CHER-US),
-option:-ms-lang(chr-CHER-US) {
-  font-family: "Gadugi", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(ja),
-.win-type-xx-large:-ms-lang(ja),
-.win-type-x-large:-ms-lang(ja),
-.win-type-large:-ms-lang(ja),
-.win-type-medium:-ms-lang(ja),
-.win-type-small:-ms-lang(ja),
-.win-type-x-small:-ms-lang(ja),
-.win-type-xx-small:-ms-lang(ja),
-input:-ms-lang(ja),
-textarea:-ms-lang(ja),
-.win-textarea:-ms-lang(ja),
-button:-ms-lang(ja),
-select:-ms-lang(ja),
-option:-ms-lang(ja) {
-  font-family: "Meiryo UI", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(km, lo, th, bug-Bugi),
-.win-type-xx-large:-ms-lang(km, lo, th, bug-Bugi),
-.win-type-x-large:-ms-lang(km, lo, th, bug-Bugi),
-.win-type-large:-ms-lang(km, lo, th, bug-Bugi),
-.win-type-medium:-ms-lang(km, lo, th, bug-Bugi),
-.win-type-small:-ms-lang(km, lo, th, bug-Bugi),
-.win-type-x-small:-ms-lang(km, lo, th, bug-Bugi),
-.win-type-xx-small:-ms-lang(km, lo, th, bug-Bugi),
-input:-ms-lang(km, lo, th, bug-Bugi),
-textarea:-ms-lang(km, lo, th, bug-Bugi),
-.win-textarea:-ms-lang(km, lo, th, bug-Bugi),
-button:-ms-lang(km, lo, th, bug-Bugi),
-select:-ms-lang(km, lo, th, bug-Bugi),
-option:-ms-lang(km, lo, th, bug-Bugi) {
-  font-family: "Leelawadee UI", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(ko),
-.win-type-xx-large:-ms-lang(ko),
-.win-type-x-large:-ms-lang(ko),
-.win-type-large:-ms-lang(ko),
-.win-type-medium:-ms-lang(ko),
-.win-type-small:-ms-lang(ko),
-.win-type-x-small:-ms-lang(ko),
-.win-type-xx-small:-ms-lang(ko),
-input:-ms-lang(ko),
-textarea:-ms-lang(ko),
-.win-textarea:-ms-lang(ko),
-button:-ms-lang(ko),
-select:-ms-lang(ko),
-option:-ms-lang(ko) {
-  font-family: "Malgun Gothic", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(jv-Java),
-.win-type-xx-large:-ms-lang(jv-Java),
-.win-type-x-large:-ms-lang(jv-Java),
-.win-type-large:-ms-lang(jv-Java),
-.win-type-medium:-ms-lang(jv-Java),
-.win-type-small:-ms-lang(jv-Java),
-.win-type-x-small:-ms-lang(jv-Java),
-.win-type-xx-small:-ms-lang(jv-Java),
-input:-ms-lang(jv-Java),
-textarea:-ms-lang(jv-Java),
-.win-textarea:-ms-lang(jv-Java),
-button:-ms-lang(jv-Java),
-select:-ms-lang(jv-Java),
-option:-ms-lang(jv-Java) {
-  font-family: "Javanese Text", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(cop-Copt),
-.win-type-xx-large:-ms-lang(cop-Copt),
-.win-type-x-large:-ms-lang(cop-Copt),
-.win-type-large:-ms-lang(cop-Copt),
-.win-type-medium:-ms-lang(cop-Copt),
-.win-type-small:-ms-lang(cop-Copt),
-.win-type-x-small:-ms-lang(cop-Copt),
-.win-type-xx-small:-ms-lang(cop-Copt),
-input:-ms-lang(cop-Copt),
-textarea:-ms-lang(cop-Copt),
-.win-textarea:-ms-lang(cop-Copt),
-button:-ms-lang(cop-Copt),
-select:-ms-lang(cop-Copt),
-option:-ms-lang(cop-Copt) {
-  font-family: "Segoe UI Symbol", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(zh-CN, zh-Hans, zh-SG),
-.win-type-xx-large:-ms-lang(zh-CN, zh-Hans, zh-SG),
-.win-type-x-large:-ms-lang(zh-CN, zh-Hans, zh-SG),
-.win-type-large:-ms-lang(zh-CN, zh-Hans, zh-SG),
-.win-type-medium:-ms-lang(zh-CN, zh-Hans, zh-SG),
-.win-type-small:-ms-lang(zh-CN, zh-Hans, zh-SG),
-.win-type-x-small:-ms-lang(zh-CN, zh-Hans, zh-SG),
-.win-type-xx-small:-ms-lang(zh-CN, zh-Hans, zh-SG),
-input:-ms-lang(zh-CN, zh-Hans, zh-SG),
-textarea:-ms-lang(zh-CN, zh-Hans, zh-SG),
-.win-textarea:-ms-lang(zh-CN, zh-Hans, zh-SG),
-button:-ms-lang(zh-CN, zh-Hans, zh-SG),
-select:-ms-lang(zh-CN, zh-Hans, zh-SG),
-option:-ms-lang(zh-CN, zh-Hans, zh-SG) {
-  font-family: "Microsoft YaHei UI", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-body:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-.win-type-xx-large:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-.win-type-x-large:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-.win-type-large:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-.win-type-medium:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-.win-type-small:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-.win-type-x-small:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-.win-type-xx-small:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-input:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-textarea:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-.win-textarea:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-button:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-select:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO),
-option:-ms-lang(zh-HK, zh-TW, zh-Hant, zh-MO) {
-  font-family: "Microsoft JhengHei UI", "Ebrima", "Nirmala UI", "Gadugi", "Segoe UI Emoji", "Segoe UI Symbol", "Symbols", "Meiryo UI", "Leelawadee UI", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Javanese Text", "Cambria Math";
-}
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  cursor: default;
-  -moz-user-select: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -ms-user-select: none;
-  -ms-scroll-translation: vertical-to-horizontal;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-html {
-  overflow: hidden;
-}
-html:lang(ar),
-html:lang(dv),
-html:lang(fa),
-html:lang(he),
-html:lang(ku-Arab),
-html:lang(pa-Arab),
-html:lang(prs),
-html:lang(ps),
-html:lang(sd-Arab),
-html:lang(syr),
-html:lang(ug),
-html:lang(ur),
-html:lang(qps-plocm) {
-  direction: rtl;
-}
-body {
-  -ms-content-zooming: none;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.333;
-}
 iframe {
   border: 0;
-}
-body,
-.win-type-xx-large,
-.win-type-x-large,
-.win-type-large,
-.win-type-medium,
-.win-type-small,
-.win-type-x-small,
-.win-type-xx-small,
-input,
-textarea,
-.win-textarea,
-button,
-select,
-option {
-  font-family: "Segoe UI", "Segoe WP", "sans-serif", "Segoe UI Symbol", "Symbols";
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -785,7 +444,6 @@ textarea,
   box-sizing: border-box;
   padding: 3px 10px 5px 10px;
   outline: 0;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -853,7 +511,6 @@ button[type=submit] {
   padding: 4px 8px;
   border-width: 2px;
   background-clip: border-box;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -908,7 +565,6 @@ input[type=file]::-ms-value {
   border-right-style: none;
   border-radius: 0;
   background-clip: border-box;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -934,7 +590,6 @@ input[type=file]::-ms-browse {
   border-width: 2px;
   border-style: solid;
   background-clip: padding-box;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -947,7 +602,6 @@ select {
   border-width: 2px;
   background-clip: border-box;
   box-sizing: border-box;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -959,10 +613,8 @@ select::-ms-expand {
   border: none;
   margin-right: -2px;
   margin-bottom: -2px;
-  font-size: 20px;
 }
 option {
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -1119,7 +771,6 @@ legend {
   margin: 0px 0px 10px 0px;
   padding: 0px;
   color: inherit;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -1127,14 +778,12 @@ code,
 pre,
 samp {
   font-family: "Consolas";
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
 caption,
 figcaption,
 small {
-  font-size: 12px;
   font-weight: 400;
   line-height: 1.167;
 }
@@ -1153,7 +802,6 @@ h2.win-type-ellipsis,
 }
 dt,
 th {
-  font-size: 11pt;
   font-weight: 700;
   line-height: 1.3636;
 }
@@ -1195,33 +843,27 @@ h6 {
   margin-bottom: 0px;
 }
 h1 {
-  font-size: 46px;
   font-weight: 200;
   line-height: 1.216;
   letter-spacing: 0px;
 }
 h2 {
-  font-size: 34;
   font-weight: 200;
   line-height: 1.176;
 }
 h3 {
-  font-size: 24px;
   font-weight: 300;
   line-height: 1.167;
 }
 h4 {
-  font-size: 20px;
   font-weight: 400;
   line-height: 1.2;
 }
 h5 {
-  font-size: 15px;
   font-weight: 500;
   line-height: 1.333;
 }
 h6 {
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -1233,7 +875,6 @@ h6 {
   width: 22em;
   margin-bottom: 14px;
   margin-top: 22px;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -1246,12 +887,10 @@ h6 {
   margin-left: 12px;
   height: 16px;
   vertical-align: top;
-  font-size: 15px;
   font-weight: 400;
   line-height: 16px;
 }
 .win-toggleswitch .win-toggleswitch-description {
-  font-size: 12pt;
   width: 22em;
   margin-top: 28px;
   display: none;
@@ -1432,7 +1071,6 @@ h6 {
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
   margin: 4px 0;
-  font-size: 20pt;
   text-align: left;
 }
 .win-hub-section-header:lang(ar),
@@ -1459,7 +1097,6 @@ button.win-hub-section-header-tabstop:hover:active {
   min-height: 0;
   min-width: 0;
   max-width: calc(100% - 3px);
-  font-size: 20pt;
 }
 button.win-hub-section-header-tabstop:lang(ar),
 html.win-hoverable button.win-hub-section-header-tabstop:hover:lang(ar),
@@ -1618,7 +1255,6 @@ body > .win-navigation-backbutton {
   text-align: center;
   width: 41px;
   height: 41px;
-  font-size: 14pt;
   line-height: 37px;
   vertical-align: baseline;
 }
@@ -1754,7 +1390,6 @@ button.win-navigation-backbutton:enabled:hover:active {
   width: 28px;
   padding: 0 6px;
   font-family: "Segoe UI Symbol", "Symbols";
-  font-size: 28px;
   overflow: hidden;
   text-indent: 0;
   line-height: 1;
@@ -1767,7 +1402,6 @@ button.win-navigation-backbutton:enabled:hover:active {
 .win-rating.win-small .win-star {
   width: 14px;
   height: 14px;
-  font-size: 14px;
   padding: 0 3px;
 }
 .win-rating .win-star:before {
@@ -2082,7 +1716,6 @@ html.win-hoverable .win-container.win-selected:hover .win-selectionborder {
   outline-width: 0.01px;
   outline-style: none;
   float: left;
-  font-size: 34;
   font-weight: 200;
   line-height: 1.176;
 }
@@ -2187,7 +1820,6 @@ html.win-hoverable .win-container.win-selected:hover .win-selectionborder {
   right: 0;
   top: 0;
   font-family: "Segoe UI Symbol", "Symbols";
-  font-size: 11pt;
   z-index: 4;
 }
 .win-listview.win-rtl .win-selectioncheckmark,
@@ -2201,7 +1833,6 @@ html.win-hoverable .win-container.win-selected:hover .win-selectionborder {
   padding: 2px;
   right: 0;
   font-family: "Segoe UI Symbol", "Symbols";
-  font-size: 11pt;
   opacity: 0.5;
 }
 .win-selectionhint.win-revealed {
@@ -2873,7 +2504,6 @@ html.win-hoverable .win-itemcontainer.win-selectionstylefilled.win-selected a:ho
   z-index: 1;
   position: absolute;
   font-family: "Segoe UI Symbol", "Symbols";
-  font-size: 16pt;
   padding: 0;
   min-width: 0;
 }
@@ -2944,7 +2574,6 @@ html.win-hoverable .win-flipview .win-navbutton:hover {
   z-index: 9999;
   word-wrap: break-word;
   animation-fill-mode: both;
-  font-size: 12px;
   font-weight: 400;
   line-height: 1.167;
 }
@@ -2994,7 +2623,6 @@ html.win-hoverable .win-flipview .win-navbutton:hover {
 .win-semanticzoom-button::before {
   font-family: "Segoe UI Symbol", "Symbols";
   font-weight: normal;
-  font-size: 11pt;
   content: "\E0B8";
   /* minus sign */
 }
@@ -3097,7 +2725,6 @@ button.win-command {
   min-width: 40px;
   min-height: 48px;
   text-align: center;
-  font-size: 9pt;
   line-height: 16px;
   font-weight: normal;
   overflow: visible;
@@ -3149,7 +2776,6 @@ Command button icons.
   letter-spacing: 0;
   /* Applications provide their own content, like &#xE0D5;. */
   vertical-align: middle;
-  font-size: 19pt;
   margin: 0;
   line-height: 24px;
   /* line-height must match the content box height */
@@ -3164,7 +2790,6 @@ Command button icons.
 .win-commandimage.win-commandglyph {
   position: absolute;
   left: -4px;
-  /* offset for font-size:19pt */
 }
 /*
 Offsets for sprite versions.
@@ -3244,7 +2869,6 @@ div.win-command {
   border: 1px dotted;
   /* reserve focus rect */
   text-align: center;
-  font-size: 9pt;
   line-height: 16px;
   font-weight: normal;
   vertical-align: top;
@@ -3333,7 +2957,6 @@ AppBar
   top: 15px;
   position: absolute;
   display: inline-block;
-  font-size: 14px;
   text-align: center;
   font-family: "Segoe UI Symbol", "Symbols";
 }
@@ -3624,7 +3247,6 @@ Flyout control.
   height: auto;
   word-wrap: break-word;
   overflow: auto;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -3680,7 +3302,6 @@ Menu commands.
   float: none;
   text-align: left;
   width: 100%;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
 }
@@ -3819,14 +3440,12 @@ Settings Pane
   position: absolute;
   width: 30px;
   height: 30px;
-  font-size: 8pt;
   line-height: 26px;
   margin-top: 3px;
 }
 .win-settingsflyout .win-header .win-label {
   display: inline-block;
   padding-left: 40px;
-  font-size: 20pt;
   line-height: 33px;
 }
 .win-settingsflyout .win-content {
@@ -3837,7 +3456,6 @@ Settings Pane
   height: calc(100% - 112px);
 }
 .win-settingsflyout .win-label {
-  font-size: 20px;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -4074,7 +3692,6 @@ Settings Pane
   border-style: none;
   margin: 0px;
   width: 100%;
-  font-size: 11pt;
   -ms-ime-align: after;
   line-height: 20px;
   box-sizing: border-box;
@@ -4085,7 +3702,6 @@ Settings Pane
   display: flex;
   padding: 0 18px;
   height: 60px;
-  font-size: 11pt;
   outline: none;
 }
 .win-autosuggestbox-suggestion-result div {
@@ -4146,7 +3762,6 @@ Settings Pane
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-size: 11pt;
   line-height: 20px;
 }
 .win-autosuggestbox-suggestion-separator {
@@ -4155,7 +3770,6 @@ Settings Pane
   display: flex;
   padding: 0 18px;
   height: 40px;
-  font-size: 11pt;
 }
 .win-autosuggestbox-suggestion-separator hr {
   -ms-flex: 1 1 auto;
@@ -4336,7 +3950,6 @@ Hide clear button in search box control.
   top: 0;
   width: 28px;
   font-family: "Segoe UI Symbol", "Symbols";
-  font-size: 15pt;
   border-style: none;
   height: 100%;
   text-align: center;
@@ -4474,7 +4087,6 @@ Hide clear button in search box control.
   height: 50px;
   width: 17px;
   margin: 20px 0;
-  font-size: 16pt;
   overflow: hidden;
 }
 .win-navbarcontainer-vertical .win-navbarcontainer-navarrow {
@@ -4533,7 +4145,6 @@ Hide clear button in search box control.
   font-family: "Segoe UI Symbol", "Symbols";
   height: 24px;
   width: 24px;
-  font-size: 24px;
   margin-left: 0;
   margin-right: 10px;
   margin-top: 8px;
@@ -4571,7 +4182,6 @@ Hide clear button in search box control.
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 11pt;
   margin: 10px 0;
 }
 .win-navbarcommand-splitbutton {
@@ -4586,7 +4196,6 @@ Hide clear button in search box control.
   align-items: center;
   width: 40px;
   font-family: "Segoe UI Symbol", "Symbols";
-  font-size: 11pt;
   margin-right: 0;
   margin-left: 2px;
   position: relative;
@@ -4714,8 +4323,6 @@ Hide clear button in search box control.
   -webkit-transition: opacity linear 167ms;
   position: absolute;
   width: 18px;
-  height: 40px;
-  margin-top: 30px;
   padding: 0px;
   top: 0px;
   min-width: 0px;
@@ -4723,7 +4330,6 @@ Hide clear button in search box control.
   cursor: pointer;
   opacity: 0;
   font-family: "Segoe UI Symbol", "Symbols";
-  font-size: 16pt;
 }
 .win-pivot .win-pivot-headers.win-pivot-shownavbuttons .win-pivot-navbutton {
   opacity: 1;
@@ -4738,7 +4344,6 @@ Hide clear button in search box control.
   -ms-flex: 0 0 auto;
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
-  font-size: 14pt;
   font-weight: 600;
   white-space: nowrap;
   margin: 12px 0 -8px 18px;
@@ -4772,7 +4377,6 @@ Hide clear button in search box control.
   white-space: nowrap;
   position: relative;
   overflow-y: visible;
-  height: 72px;
   touch-action: none;
   -ms-touch-action: none;
 }
@@ -4784,7 +4388,8 @@ Hide clear button in search box control.
   overflow: hidden;
 }
 .win-pivot button.win-pivot-header,
-.win-pivot button.win-pivot-header:hover:active {
+.win-pivot button.win-pivot-header:hover:active,
+html.win-hoverable .win-pivot button.win-pivot-header:hover {
   background-color: transparent;
   border: 0;
   margin: 0;
@@ -4792,9 +4397,8 @@ Hide clear button in search box control.
   letter-spacing: 0px;
   min-height: 0;
   min-width: 0;
-  font-size: 45pt;
-  font-weight: 400;
 }
+
 .win-pivot button.win-pivot-header.win-keyboard:focus {
   outline-style: dotted;
   outline-width: 1px;
@@ -4836,23 +4440,12 @@ Hide clear button in search box control.
   height: 100%;
   position: relative;
 }
-html.win-hoverable .win-pivot button.win-pivot-header:hover {
-  background-color: transparent;
-  border: 0;
-  margin: 0;
-  padding: 0px 9px;
-  letter-spacing: 0px;
-  min-height: 0;
-  min-width: 0;
-  font-size: 45pt;
-  font-weight: 400;
-}
 /*
     PivotItem
 */
 .win-pivot-item {
   position: absolute;
-  top: 28px;
+  top: 5vw;
   bottom: 0;
   /* Since the surface is 100x in width, 1% here means the size of the viewport. */
   width: 1%;
@@ -5000,14 +4593,12 @@ html.win-hoverable .win-pivot button.win-pivot-header:hover {
   -webkit-flex: 0 0 auto;
   flex: 0 0 auto;
   overflow: hidden;
-  font-size: 20px;
   max-height: 56px;
 }
 .win-contentdialog .win-contentdialog-content {
   -ms-flex: 1 0 auto;
   -webkit-flex: 1 0 auto;
   flex: 1 0 auto;
-  font-size: 15px;
 }
 .win-contentdialog .win-contentdialog-commands {
   -ms-flex: 0 0 auto;
@@ -5036,7 +4627,6 @@ html.win-hoverable .win-pivot button.win-pivot-header:hover {
   white-space: nowrap;
   padding-left: 12px;
   padding-right: 12px;
-  font-size: 15px;
 }
 /* For now until the colors are finalized, just use the light theme's colors everywhere */
 .win-contentdialog .win-contentdialog-backgroundoverlay {
@@ -5115,7 +4705,6 @@ html.win-hoverable .win-pivot button.win-pivot-header:hover {
   flex: 0 0 auto;
   border: 1px dotted transparent;
   padding: 10px 11px 12px 11px;
-  font-size: 15px;
   font-weight: 400;
   line-height: 1.333;
   white-space: nowrap;
@@ -5160,7 +4749,6 @@ html.win-hoverable .win-pivot button.win-pivot-header:hover {
   line-height: 24px;
   position: absolute;
   display: inline-block;
-  font-size: 14px;
   text-align: center;
   font-family: "Segoe UI Symbol", "Symbols";
 }
@@ -5189,10 +4777,6 @@ html.win-hoverable .win-pivot button.win-pivot-header:hover {
   color: #ffffff;
 }
 .win-ui-light {
-  background-color: #000000;
-  color: #ffffff;
-}
-body {
   background-color: #000000;
   color: #ffffff;
 }

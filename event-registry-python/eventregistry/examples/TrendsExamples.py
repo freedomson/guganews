@@ -27,7 +27,7 @@ print(er.format(ret))
 #
 # top 20 trending concepts in the social media
 #
-q = GetTrendingConcepts(source = "social", count = 20,
+q = GetTrendingConcepts(source = "social", count = 100,
     returnInfo = ReturnInfo(
         conceptInfo = ConceptInfoFlags(trendingHistory = True)))
 ret = er.execQuery(q)

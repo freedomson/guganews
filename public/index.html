@@ -71,34 +71,9 @@
 
     <div class="fullScreen">
 
-        <!-- app header and backbutton-->
-        <div id="appHeader">
-            <button data-win-control="WinJS.UI.BackButton"></button>
-            <a href="http://www.guganews.com"><h1 id="appHeaderTitle">
-                Guga<br/>news.com
-                </h1></a>
-        </div>
-
-        <!-- Template for ListView in section 2 -->
-        <!--
-    <div class="smallListIconTextTemplate" data-win-control="WinJS.Binding.Template">
-        <div class="smallListIconTextItem">	
-            <img src="#" class="smallListIconTextItem-Image" data-win-bind="src: picture" />
-            <div class="smallListIconTextItem-Detail">
-                <h4 data-win-bind="textContent: title"></h4>
-                <h6 data-win-bind="textContent: text"></h6>
-            </div>
-        </div>
-    </div>
-    -->
-
-
-
-
-
         <!-- Start PIVOT... -->
         <div class="mailItemTemplate" data-win-control="WinJS.Binding.Template">
-            <div class="mailItem mailItemIndex">
+            <div class="mailItem mailItemIndex mailItem-Initial">
                 <div class="hitTarget win-interactive"></div>
                 <h2 class="title title-index fontcolorselect" data-win-bind="innerHTML: name"></h2>
             </div>
@@ -121,27 +96,9 @@
 
         </div>
 
-        <!-- 
-        <div id="list" class="section2" data-win-control="WinJS.UI.HubSection" data-win-options="{header: 'ListView', isHeaderStatic: true}">
-            <div id="listView"
-                    class="win-selectionstylefilled"
-                    data-win-control="WinJS.UI.ListView"
-                    data-win-options="{
-                    itemDataSource: select('.pagecontrol').winControl.myData.dataSource,
-                    itemTemplate: select('.smallListIconTextTemplate'),
-                    selectionMode: 'none',
-                    layout: { type: WinJS.UI.ListLayout},
-                    tapBehavior: 'none',
-                    swipeBehavior: 'none'
-                }">
-            </div>
-                        -->
-
     </div>
 
-
-    <div class="powered">Powered by
-        <a href="https://newsapi.org">newsapi.org</a>
+    <div class="powered">Powered by newsapi.org</div>
 </body>
 
 </html>

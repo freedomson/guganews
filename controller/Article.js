@@ -24,11 +24,12 @@ getArticle.prototype.get = function (request, response) {
     var to = request.get.to || Config.keywords.to
     var from = request.get.from || Config.keywords.from
     var location = request.get.location || Config.newsitems.location
+    var pageSize = request.get.pageSize || Config.newsitems.pageSize
     var hash = request.get.keywords+location
-    var cached=cache.get(hash);
+    var cached = cache.get(hash);
 
     if (cached) {
-        console.log("Art from cache!", hash/*, JSON.parse(cached)*/);
+        console.log("Art from cache!", hash);
         var err = JSON.stringify(cached).indexOf("404 - File or directory not found.")==-1 ? false : true;
         if (!err) {
             console.log('cached',hash);
@@ -42,71 +43,35 @@ getArticle.prototype.get = function (request, response) {
         }
     }
 
-    console.log('fetching',hash);
+    console.log('Fetching...',hash);
+
     let topics = request.get.keywords.split(',')
 
-    // var keywords = request.get.keywords ? ',{"keyword": {"$and": ["'+request.get.keywords+'"]}}' : ""
     topics.forEach((topic)=>{
-        // console.log(topic)
-        getArticle.prototype.translate(hash, topic, topics, from, to, location, name, response)
+        getArticle.prototype.translate(hash, topic, topics, from, to, location, name, pageSize, response)
     })
-
-    // Caching results not yet ready - advise client to wait -accepted
-    
-/*
-    var keywords = request.get.keywords ? ',{"keyword": {"$and": ["'+request.get.keywords+'"]}}' : ""
-
-    var out = requestOut.get({
-            url: Config.urls.events,
-            qs: {
-                "apiKey": Config.apikey,
-                "query": '{"$query": {"$and": [{"locationUri": {"$or": ["'+location+'"]}}'+keywords+']}}',
-                "action": "getEvents",
-                "resultType": "events",
-                "eventsSortBy": "date",
-                "eventsCount": Config.newsitems.total,
-                "eventsEventImageCount":  Config.newsitems.images
-            }
-        },
-        function (error, response2, body) {
-            // console.log(body);
-            response.writeHead(200, {"Content-Type": "application/json"}); 
-            response.end(body);
-        });
-        //console.log(out)
-        */
 }
 
-getArticle.prototype.articleprocessor = function(hashin, keywords, location, name, to, response){
+getArticle.prototype.articleprocessor = function(hashin, keywords, location, name, to, pageSize, response){
 
-    // console.log("keywords", keywords);
-
-    // var keywords = (keywords)  ? ',{"keyword": {"$or": ["'+keywords.join('","')+'"]}}' : ""
     var keywords = keywords ? keywords : [name]
-    var availableLangs=['ar','en','cn','de','es','fr','he','it','nl','no','pt','ru','sv','ud']
-    var availablecountries=['ar','au','br','ca','cn','de','es','fr','gb','hk','ie','in','is','it','nl','no','pk','ru','sa','sv','us','za']
 
+    var availableLangs=['ar','en','cn','de','es','fr','he','it','nl','no','pt','ru','se','sv','ud','zh']
+    var availablecountries=['ae','ar','at','au','be','bg','br','ca','ch','cn','co','cu','cz','de','eg','fr','gb','gr','hk','hu','id','ie','il','in','it','jp','kr','lt','lv','ma','mx','my','ng','nl','no','nz','ph','pl','pt','ro','rs','ru','sa','se','sg','si','sk','th','tr','tw','ua','us','ve','za']
     var setup = {
         url: Config.urls.events,
         qs: {
-            // "apiKey": Config.apikey,
-            // "query": '{"$query": {"$and": [{"locationUri": {"$or": ["'+location+'"]}}'+keywords+']}}',
-            // "action": "getEvents",
-            // "resultType": "events",
-            // "eventsSortBy": "date",
-            // "eventsCount": Config.newsitems.total,
-            // "eventsEventImageCount":  Config.newsitems.images
             "q":"("+keywords.join(' OR ')+")",
             "language":(availableLangs.find(l=>l==to))?to:Config.keywords.to,
-            //"country":(availablecountries.find(l=>l==to))?to:'all',
             "sortBy":"publishedAt",
-            "from": new Date(Date.now() - 86400000*2).toISOString().slice(0,10), // 2 days ago
-            "apiKey":Config.apikey
+            "from": new Date(Date.now() - 86400000*5).toISOString(), // 5 days ago
+            "apiKey":Config.apikey,
+            "pageSize":pageSize
         }
     };
-    // https://newsapi.org/v2/everything?sortBy=publishedAt&from=2017-12-02language=pt&q=portugal%20tecnologia&apiKey=
-    // console.log("Setup", setup);
-    var out = requestOut.get(setup,
+
+    var out = requestOut.get(
+        setup,
         function (error, responsein, body) {
             cache.put(hashin, body, Config.cachetimeout);
             if (Config.cachefile) {
@@ -114,7 +79,6 @@ getArticle.prototype.articleprocessor = function(hashin, keywords, location, nam
                     if (err) {
                       return console.log('error',err);
                     }
-                    // console.log(cached);
                     console.log('Cache written', Config.cachefilename);
                   });
             }
@@ -122,7 +86,7 @@ getArticle.prototype.articleprocessor = function(hashin, keywords, location, nam
         });
 }
 
-getArticle.prototype.translateprocessor = function(hashin, topics, value, location, name, to, response){
+getArticle.prototype.translateprocessor = function(hashin, topics, value, location, name, to, pageSize, response){
 
     var hash = hashin+topics.length
     var hashdata = hashin+topics.length+1
@@ -151,20 +115,18 @@ getArticle.prototype.translateprocessor = function(hashin, topics, value, locati
         }
         
     }
-    // console.log('topics',cacheddata.length,topics)
-    //if (cacheddata.length===topics.length){
-        cacheddata = cache.get(hashdata);
-        // console.log('All is translated!', topics, cacheddata);
-        getArticle.prototype.articleprocessor(hashin, cacheddata, location, name, to, response)
-    //}
+
+    cacheddata = cache.get(hashdata);
+    getArticle.prototype.articleprocessor(hashin, cacheddata, location, name, to, pageSize, response)
+
 }
 
-getArticle.prototype.translate = function (hashin, topic, topics, from, to, location, name, response) {
+getArticle.prototype.translate = function (hashin, topic, topics, from, to, location, name, pageSize, response) {
     var hash=topic+from+to
     var cached=cache.get(hash);
     if (cached) {
-        // console.log("Translate from cache!", cached);
-        getArticle.prototype.translateprocessor(hashin, topics, cached, location, name, to, response)
+        console.log("Translate from cache!", cached);
+        getArticle.prototype.translateprocessor(hashin, topics, cached, location, name, to, pageSize, response)
         return cached;
     }
     var transreq={
@@ -175,7 +137,6 @@ getArticle.prototype.translate = function (hashin, topic, topics, from, to, loca
             "lang": from+"-"+to
         }
     }
-    // console.log('transreq',transreq);
     var out = requestOut.get(transreq, 
         function (error, responsein, body) {
             try {
@@ -185,7 +146,7 @@ getArticle.prototype.translate = function (hashin, topic, topics, from, to, loca
                 jbody = {}
             }
             console.log('translateprocessor call')
-            getArticle.prototype.translateprocessor(hashin, topics, jbody, location, name, to,  response)
+            getArticle.prototype.translateprocessor(hashin, topics, jbody, location, name, to,  pageSize, response)
             cache.put(hash, jbody); 
             return jbody;
         });
